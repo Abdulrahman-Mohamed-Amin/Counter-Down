@@ -1,0 +1,90 @@
+
+.countdown{
+  height: 100vh;
+position: relative;
+}
+.countdown .count{
+  text-align: center;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50% , -50%) scale(1);
+}
+.countdown .cont_number{
+  overflow: hidden;
+  transform-origin: bottom right;
+  transition: 1s;
+}
+.countdown.finish .count{
+  transform: translate(-50% , -50%) scale(0);
+
+}
+.countdown .number{
+  font-size: 55px;
+  color: #7bdaf3;
+  transform-origin: bottom center;
+  transform: rotate(130deg);
+  animation: goin 1s ease-in infinite;
+}
+.countdown strong{
+  font-size: 22px;
+}
+.countdown .replay{
+  position: absolute;
+  left: 50%; top: 50%;
+  text-align: center;
+  transform: translate(-50% , -50%) scale(0);
+}
+.countdown.finish .replay{
+  animation: show 1s ease-in ;
+}
+button{
+  border: none;
+  color: #fff;
+  background: #7bdaf3;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+@keyframes goin {
+  0% {
+    transform: rotate(120deg);
+  }
+  20%{
+    transform: rotate(-20deg);
+    
+  }
+  35%{
+
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: rotate(0deg);
+    
+  }
+  70%{
+    transform: rotate(10deg);
+    
+  }
+  85%{
+
+    transform: rotate(-20deg);
+  }
+  100%{
+    transform: rotate(-270deg);
+    
+  }
+
+}
+
+@keyframes show {
+  0% {
+    transform: translate(-50% , -50%) scale(0);
+  }
+  50%{
+    transform: translate(-50% , -50%) scale(1.4);
+  }
+  100%{
+    transform: translate(-50% , -50%) scale(1);
+  }
+}
